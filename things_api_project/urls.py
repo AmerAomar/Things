@@ -15,8 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include # we are adding include bc we are going to include the urls from the things app
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/things', include('Things.urls')), # this is the url that we are going to use to access the things app, api/v1/things is the url that we are going to use to access the things app
 ]
